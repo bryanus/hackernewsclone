@@ -1,0 +1,8 @@
+ <% if current_user %>
+      <% unless post.user.id == current_user.id || post.postvotes.find_by_user_id(current_user.id) %>
+      
+      <form action="<%= current_user.id%>/<%= post.id%>/postvotes/new" method="post">
+        <input type="submit" value="vote">
+      </form>
+      <% end %>
+<% end %>

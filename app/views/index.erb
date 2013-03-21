@@ -1,0 +1,15 @@
+
+  <ol>
+    <% @posts.sort.each do |post| %>
+    <li>
+      <a href="<%= post.url %>"><%= post.title%></a>
+      <span>(<%= clean_link(post.url) %>)</span>
+      <small><%= post.postvotes.count %> points by <%= post.user.name %> <%= (post.created_at).ago_in_words %> | <a href="/posts/<%= post.id%>"><%= post.comments.count%> comments</a></small>
+      <%= erb :"partials/_vote", layout: false, locals: {post: post} %>
+       
+    </li>
+  <% end %>
+  </ol>
+
+  <%= will_paginate @posts %>
+

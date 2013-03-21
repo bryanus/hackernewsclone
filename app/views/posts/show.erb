@@ -1,0 +1,37 @@
+<h1>This is <%= @post.user%>'s post</h1>
+
+<%= @post.title %>
+<%= @post.url %>
+
+
+<form action="/posts/<%= @post.id%>/comments/new" method="post">
+
+  <fieldset>
+      <legend>Comment</legend>
+
+      <label for="body">body</label>
+      <input type="text" name="body">
+      <input type="submit" value="submit">
+
+
+  </fieldset>
+</form>
+
+
+<section>
+
+  <% @post.comments.each do |comment| %>
+ <p><%= comment.body %> <span><%= comment.commentvotes.count%></span></p>
+
+<form action="/<%= current_user.id %>/<%= comment.id %>/commentvotes/new" method="post">
+  <input type="submit" value="vote">
+</form>
+
+ <% end %>
+
+</section>
+
+
+
+
+

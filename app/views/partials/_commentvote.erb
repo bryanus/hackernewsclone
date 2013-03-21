@@ -1,0 +1,8 @@
+<% if current_user %>
+      <% unless comment.user.id == current_user.id || comment.commentvotes.find_by_user_id(current_user.id) %>
+      
+      <form action="<%= current_user.id%>/<%= comment.id%>/commentvotes/new" method="post">
+        <input type="submit" value="vote">
+      </form>
+      <% end %>
+<% end %>

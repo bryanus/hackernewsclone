@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- 
+    normalize.css removes cross-browser differences in defaults, e.g.,
+    differences in how form elements appear between Firefox and IE
+    See: http://necolas.github.com/normalize.css/
+  -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+  <title></title>
+</head>
+ <div class="container">
+  <header>
+    <nav id="main">
+      <img src="/images/y.gif" height="20">
+      <h1>Hacker News Clone</h1>
+      <ul>
+          <li>new</li>    
+          <li>threads</li>
+          <li>comments</li>
+          <li>ask</li>
+          <li>jobs</li>
+          <li>submit</li> 
+          <% if current_user %>
+          <li><%= current_user.name %></li>
+          <li>
+            <form action="/users/logout" method="post">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" value="signout">
+            </form>
+            </li>
+            <li><a href="/posts/new">Create a post</a></li>
+          <% else %>
+          <li><a href="users/new">signup</a></li>
+          <li><a href="/users/login">Login</a></li>
+          <% end %>
+      </ul>
+    </nav>
+  </header>
+<body>
+  <%= yield %>
+  </div>
+</body>
+</html>
