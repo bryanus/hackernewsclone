@@ -32,7 +32,8 @@ post '/users/login' do
   end
 end  
 
-delete '/users/logout' do
-  session[:token] = nil
+get '/users/logout' do
+  session.clear
+  # session[:token] = nil
   redirect ('/')
 end  

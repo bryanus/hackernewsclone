@@ -14,7 +14,7 @@
  <div class="container">
   <header>
     <nav id="main">
-      <img src="/images/y.gif" height="20">
+      <a href="/"><img src="/images/y.gif" height="20"></a>
       <h1>Hacker News Clone</h1>
       <ul>
           <li>new</li>    
@@ -22,19 +22,17 @@
           <li>comments</li>
           <li>ask</li>
           <li>jobs</li>
-          <li>submit</li> 
+          <li><a href="/posts/new">submit</a></li> 
           <% if current_user %>
           <li><%= current_user.name %></li>
           <li>
-            <form action="/users/logout" method="post">
-              <input type="hidden" name="_method" value="delete">
-              <input type="submit" value="signout">
-            </form>
+            <a href="/users/logout" method="post">signout</a>
+           
             </li>
-            <li><a href="/posts/new">Create a post</a></li>
+            
           <% else %>
-          <li><a href="users/new">signup</a></li>
-          <li><a href="/users/login">Login</a></li>
+            <li><a href="/users/new">signup</a></li>
+            <li><a href="/users/login">Login</a></li>
           <% end %>
       </ul>
     </nav>

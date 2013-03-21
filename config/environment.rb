@@ -33,6 +33,6 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
 require 'faker'
-require 'time_ago_in_words'
+# require 'time_ago_in_words'
 require 'will_paginate'
 require 'will_paginate/active_record'

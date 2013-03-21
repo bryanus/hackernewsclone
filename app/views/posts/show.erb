@@ -1,10 +1,11 @@
-<h1>This is <%= @post.user%>'s post</h1>
+<!-- <h1>This is <%= @post.user%>'s post</h1> -->
 
-<%= @post.title %>
+
+<%= @post.title %><br>
 <%= @post.url %>
 
 
-<form action="/posts/<%= @post.id%>/comments/new" method="post">
+<form action="/posts/<%= @post.id %>/comments/new" method="post">
 
   <fieldset>
       <legend>Comment</legend>
@@ -23,9 +24,7 @@
   <% @post.comments.each do |comment| %>
  <p><%= comment.body %> <span><%= comment.commentvotes.count%></span></p>
 
-<form action="/<%= current_user.id %>/<%= comment.id %>/commentvotes/new" method="post">
-  <input type="submit" value="vote">
-</form>
+<%= erb :"partials/_commentvote", layout: false, locals: {comment: comment} %>
 
  <% end %>
 
