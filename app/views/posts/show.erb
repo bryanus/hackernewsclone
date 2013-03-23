@@ -7,15 +7,14 @@
 
 <form action="/posts/<%= @post.id %>/comments/new" method="post">
 
-  <fieldset>
-      <legend>Comment</legend>
+  
+      
+      
+      <textarea rows="6" cols="60" name="body"></textarea><br>
+      <input type="submit" value="add comment">
 
-      <label for="body">body</label>
-      <input type="text" name="body">
-      <input type="submit" value="submit">
 
-
-  </fieldset>
+  
 </form>
 
 

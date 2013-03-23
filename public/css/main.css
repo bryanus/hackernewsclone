@@ -22,7 +22,9 @@ nav#main ul li {
   font-size: 0.8em;
 }
 
-
+p {
+  font-size: 13px;
+}
 
 #main {
   background-color: #ff6600;
@@ -66,7 +68,28 @@ small {
 }
 
 
-/*button {
-  background : url("/images/grayarrow.gif") no-repeat center center;
+form.vote, form.commentvote {
+  display: inline; 
+  position: absolute;
 }
-*/
+
+
+input[type=submit].upvote {
+  background: url("../images/grayarrow.gif") no-repeat center center;
+  border: none;
+  color: transparent;
+  position: relative;
+  bottom: 35px;
+  right: 10px;
+}
+
+input[type=submit].commentvote {
+  background: url("../images/grayarrow.gif") no-repeat center center;
+  border: none;
+  color: transparent;
+
+}
+
+textarea {
+  margin-left: 20px;
+}
