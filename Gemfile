@@ -16,9 +16,11 @@ gem 'activerecord'
 gem 'rake'
 gem 'bcrypt-ruby'
 
+gem 'faker'
+gem 'rspec'
+
 group :test do
-  gem 'faker'
-  gem 'rspec'
+  
 end
 
 # gem 'time_ago_in_words'
